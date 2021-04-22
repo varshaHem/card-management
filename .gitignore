@@ -24,3 +24,7 @@ hs_err_pid*
 
 #intellij
 .idea
+
+# Maven
+log/
+target/

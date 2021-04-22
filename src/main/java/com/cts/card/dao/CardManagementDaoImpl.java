@@ -20,6 +20,6 @@ public class CardManagementDaoImpl implements CardManagementDao {
 
     @Override
     public void addCard(CardDetails cardDetails) {
-        List<CardDetails> cardDetailsList = Stream.of(cardDetails).collect(Collectors.toList());
+        Stream.of(cardDetails).collect(Collectors.toList())
     }
 }

@@ -1,4 +1,4 @@
-package com.cts.card;
+package com.cts.card.exception;
 
 import com.cts.card.model.ErrorResponse;
 import org.springframework.http.HttpHeaders;

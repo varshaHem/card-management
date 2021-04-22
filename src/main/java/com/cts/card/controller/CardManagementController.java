@@ -4,9 +4,10 @@ import com.cts.card.model.CardDetails;
 import com.cts.card.service.CardManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.validation.Valid;
 
 /**
  * Rest Controller that maps all
@@ -15,6 +16,7 @@ import java.util.List;
  */
 
 @RestController
+@Validated
 @RequestMapping("api/card")
 public class CardManagementController {
 
@@ -23,8 +25,8 @@ public class CardManagementController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public List<CardDetails> addCard(@RequestBody CardDetails cardDetails) {
-        return cardManagementService.addCard(cardDetails);
+    public void addCard(@RequestBody @Valid CardDetails cardDetails) {
+         cardManagementService.addCard(cardDetails);
     }
 
 }

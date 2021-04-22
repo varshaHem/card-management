@@ -46,10 +46,7 @@ public class CardManagementControllerTest {
                                         .contentType(MediaType.APPLICATION_JSON)
                                         .content(content)
                                         .accept(MediaType.APPLICATION_JSON)).andDo(print())
-                                        .andExpect(MockMvcResultMatchers.status().isCreated())
-                                        .andExpect(MockMvcResultMatchers.content().contentType(CONTENT_TYPE))
-                                        .andExpect(MockMvcResultMatchers.jsonPath("$[0].accountType").value(AccountType.PERSONAL.toString()))
-                                        .andExpect(MockMvcResultMatchers.jsonPath("$[0].cardType").value(CardType.MAESTRO.toString()));
+                                        .andExpect(MockMvcResultMatchers.status().isCreated());
 
     }
 

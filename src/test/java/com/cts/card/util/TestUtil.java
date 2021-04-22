@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -22,16 +23,14 @@ public class TestUtil {
         mapper.registerModule(new JavaTimeModule());
         mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
         LocalDate localDate = LocalDate.parse(expiryDate);
-        double withdrawalLimit = 500;
-        double dailyPaymentLimit = 2500;
         CardDetails testCard = new CardDetails("V. Hemnani",
                 "6734 0001 0014 3773 001",
                 localDate,
                 CardType.MAESTRO,
                 "0100143773",
                 AccountType.PERSONAL,
-                withdrawalLimit,
-                dailyPaymentLimit);
+                new BigDecimal(500),
+                new BigDecimal(2500));
         return mapper.writeValueAsString(testCard);
     }
 
@@ -46,8 +45,8 @@ public class TestUtil {
                 CardType.VISA,
                 "0100143773",
                 AccountType.PERSONAL,
-                500,
-                1000);
+                new BigDecimal(500),
+                new BigDecimal(1000));
 
     }
 
@@ -62,8 +61,8 @@ public class TestUtil {
                 CardType.MASTERCARD,
                 "0100140001",
                 AccountType.PERSONAL,
-                600,
-                1000);
+                new BigDecimal(600),
+                new BigDecimal(1000));
 
     }
 }

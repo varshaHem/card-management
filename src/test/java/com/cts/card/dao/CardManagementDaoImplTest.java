@@ -1,7 +1,6 @@
 package com.cts.card.dao;
 
 import com.cts.card.model.CardDetails;
-import com.cts.card.model.CardDetailsList;
 import com.cts.card.util.TestUtil;
 import lombok.val;
 import org.junit.jupiter.api.Test;

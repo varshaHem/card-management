@@ -10,8 +10,6 @@ import java.util.List;
  */
 public interface CardManagementService {
 
-     List<CardDetails> addCard(CardDetails cardDetails);
-     void freezeCard();
-     void cancelAndReplaceCard();
+     void addCard(CardDetails cardDetails);
 
 }

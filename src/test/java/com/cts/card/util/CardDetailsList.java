@@ -1,4 +1,6 @@
-package com.cts.card.model;
+package com.cts.card.util;
+
+import com.cts.card.model.CardDetails;
 
 import java.util.ArrayList;
 
